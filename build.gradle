@@ -1,0 +1,94 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+eclipse {
+    classpath {
+        downloadSources = true
+        downloadJavadoc = false
+    }
+}
+
+group = 'allaboutjst'
+archivesBaseName = 'airbnb-java-coding'
+version = '1.0'
+description = 'AirBnB java coding exercise'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'junit:junit:4.12'
+    compile 'org.apache.commons:commons-lang3:3.4'
+    testCompile 'junit:junit:4.12'
+}
+
+sourceSets.test.java.srcDir 'src/main/java'
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '4.1'
+}
+
+task question {
+    doLast {
+        def insertUnderlineIfStartsWithDigit = { s ->
+            if (Character.isDigit(s.charAt(0))) {
+                s = "_" + s
+            }
+            s
+        }
+
+        if (!project.hasProperty('q')) {
+            throw new InvalidUserDataException('You need to specify a question. E.g., gradle question "-Pq=Some Question"')
+        }
+
+        def question = project.q
+
+        def questionPackage = insertUnderlineIfStartsWithDigit(question.replaceAll(' ', '_').toLowerCase())
+
+        def className = insertUnderlineIfStartsWithDigit(question.replaceAll(' ', ''))
+
+        def questionPackageDir = new File(sourceSets.main.java.srcDirs.iterator().next(), questionPackage)
+        if (!questionPackageDir.exists()) {
+            println 'Create ' + questionPackageDir
+            questionPackageDir.mkdirs()
+        }
+
+        def questionFile = new File(questionPackageDir, className + '.java')
+        if (!questionFile.exists()) {
+            println 'Create ' + questionFile
+            questionFile.withWriter { out ->
+                out.writeLine("""\
+package ${questionPackage};
+
+import java.util.*;
+import org.junit.*;
+import static org.junit.Assert.*;
+
+public class ${className} {
+    /*
+     */
+    public class Solution {
+
+    }
+
+    public static class UnitTest {
+        @Test
+        public void test1() {
+            Solution sol = new ${className}().new Solution();
+            assertEquals(1, 1);
+        }
+    }
+}
+""")
+            }
+        }
+    }
+}
+
