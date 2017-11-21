@@ -1,6 +1,13 @@
+# gradle/build/.class files
 .gradle/*
 build/
 *.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
@@ -9,6 +16,9 @@ build/
 *.jar
 *.war
 *.ear
+*.zip
+*.tar.gz
+*.rar
 
 # Intellij related
 .idea/*
