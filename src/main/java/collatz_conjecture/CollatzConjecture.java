@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class CollatzConjecture {
     /*
         Collatz Conjecture
+        AirBnB Interview Question
         https://en.wikipedia.org/wiki/Collatz_conjecture
      */
     public class Solution {
@@ -32,7 +33,8 @@ public class CollatzConjecture {
     }
 
     /*
-        Collatz Conjecture
+        Collatz Conjecture - Memorization
+        AirBnB Interview Question
         https://en.wikipedia.org/wiki/Collatz_conjecture
      */
     public class Solution_2 {

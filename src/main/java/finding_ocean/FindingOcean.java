@@ -9,9 +9,10 @@ import static org.junit.Assert.*;
 public class FindingOcean {
     /*
         Finding Ocean
+        AirBnB Interview Question
      */
     public class Solution {
-        private void floodFill(char[][] board, int i, int j, char oldColor, char newColor) {
+        public void floodFill(char[][] board, int i, int j, char oldColor, char newColor) {
             if (board[i][j] != oldColor || board[i][j] == newColor) {
                 return;
             }
@@ -49,33 +50,48 @@ public class FindingOcean {
         @Test
         public void test1() {
             Solution sol = new FindingOcean().new Solution();
-            char[][] map = new char[][]{
-                    {'W', 'W', 'W', 'L', 'L', 'L', 'W'},
-                    {'W', 'W', 'L', 'L', 'L', 'W', 'W'},
-                    {'W', 'L', 'L', 'L', 'L', 'W', 'W'}
-            };
+            List<String> testData = new ArrayList<String>() {{
+                add("WWWLLLW");
+                add("WWLLLWW");
+                add("WLLLLWW");
+            }};
+            char[][] map = new char[testData.size()][testData.get(0).length()];
+            for (int i = 0; i < testData.size(); i++)
+                for (int j = 0; j < testData.get(i).length(); j++)
+                    map[i][j] = testData.get(i).charAt(j);
+
             sol.floodFill(map, 0, 0, 'W', 'O');
             assertEquals('O', map[0][0]);
 
-//            String s = "LLLLLLLLLLLLLLLLLLLL";
-//            points.insert("LLLLLLLLLLLLLLLLLLLL");
-//            points.insert("LLLLLLLLLLLLLLWLLLLL");
-//            points.insert("LLWWLLLLLLLLLLLLLLLL");
-//            points.insert("LLWWLLLLLLLLLLLLLLLL");
-//            points.insert("LLLLLLLLLLLLLLLLLLLL");
-//            points.insert("LLLLLLLWWLLLLLLLLLLL");
-//            points.insert("LLLLLLLLWWLLLLLLLLLL");
-//            points.insert("LLLLLLLLLWWWLLLLLLLL");
-//            points.insert("LLLLLLLLLLWWWWWWLLLL");
-//            points.insert("LLLLLLLLLLWWWWWWLLLL");
-//            points.insert("LLLLLLLLLLWWWWWWLLLL");
-//            points.insert("LLLLWWLLLLWWWWWWLLLL");
-//            points.insert("LLLLWWWLLLWWWWWWWWWW");
-//            points.insert("LLLLLWWWWWWWWWWWLLLL");
-//            points.insert("LLLLLLLLLLLLLLWWWWLL");
-//            points.insert("LLLLLLLLLLLLLLWLLLLL");
-//            points.insert("LLLLWLLLLLLLLLLLLWLL");
-//            points.insert("LLLLLLLLLLLLLLLLLLWL");
+
+            testData = new ArrayList<String>() {{
+                add("LLLLLLLLLLLLLLLLLLLL");
+                add("LLLLLLLLLLLLLLLLLLLL");
+                add("LLLLLLLLLLLLLLWLLLLL");
+                add("LLWWLLLLLLLLLLLLLLLL");
+                add("LLWWLLLLLLLLLLLLLLLL");
+                add("LLLLLLLLLLLLLLLLLLLL");
+                add("LLLLLLLWWLLLLLLLLLLL");
+                add("LLLLLLLLWWLLLLLLLLLL");
+                add("LLLLLLLLLWWWLLLLLLLL");
+                add("LLLLLLLLLLWWWWWWLLLL");
+                add("LLLLLLLLLLWWWWWWLLLL");
+                add("LLLLLLLLLLWWWWWWLLLL");
+                add("LLLLWWLLLLWWWWWWLLLL");
+                add("LLLLWWWLLLWWWWWWWWWW");
+                add("LLLLLWWWWWWWWWWWLLLL");
+                add("LLLLLLLLLLLLLLWWWWLL");
+                add("LLLLLLLLLLLLLLWLLLLL");
+                add("LLLLWLLLLLLLLLLLLWLL");
+                add("LLLLLLLLLLLLLLLLLLWL");
+            }};
+
+            map = new char[testData.size()][testData.get(0).length()];
+            for (int i = 0; i < testData.size(); i++)
+                for (int j = 0; j < testData.get(i).length(); j++)
+                    map[i][j] = testData.get(i).charAt(j);
+            sol.floodFill(map, 9, 12, 'W', 'O');
+            assertEquals('O', map[9][11]);
         }
     }
 }

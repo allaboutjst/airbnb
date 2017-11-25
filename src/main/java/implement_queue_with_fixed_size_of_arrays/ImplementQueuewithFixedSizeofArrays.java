@@ -1,14 +1,15 @@
 package implement_queue_with_fixed_size_of_arrays;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class ImplementQueuewithFixedSizeofArrays {
     /*
         Implement Queue with Fixed Size of Arrays
-        https://www.cs.bu.edu/teaching/c/queue/array/types.html
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class QueueWithFixedArray {
         private int fixedSize;
@@ -33,7 +34,7 @@ public class ImplementQueuewithFixedSizeofArrays {
                 List<Object> newList = new ArrayList<>();
                 newList.add(num);
                 tailList.add(newList);
-                tailList = (List<Object>)tailList.get(tail);
+                tailList = (List<Object>) tailList.get(tail);
                 tail = 0;
             } else {
                 tailList.add(num);
@@ -47,12 +48,12 @@ public class ImplementQueuewithFixedSizeofArrays {
                 return null;
             }
 
-            int num = (int)headList.get(head);
+            int num = (int) headList.get(head);
             head++;
             count--;
 
             if (head == fixedSize - 1) {
-                List<Object> newList = (List<Object>)headList.get(head);
+                List<Object> newList = (List<Object>) headList.get(head);
                 headList.clear();
                 headList = newList;
                 head = 0;

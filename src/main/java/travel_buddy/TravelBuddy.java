@@ -9,8 +9,7 @@ import static org.junit.Assert.*;
 public class TravelBuddy {
     /*
         Travel Buddy
-        http://www.1point3acres.com/bbs/thread-214074-1-1.html
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution {
         private List<Buddy> buddies;

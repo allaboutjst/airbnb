@@ -1,14 +1,18 @@
 package water_land;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class WaterLand {
     /*
+        Water Land / Water Drop / Pour Water
+        AirBnB Interview Question
      */
     public class Solution {
-        public void pourWater(int[] heights, int water, int location) {
+        public void pourWater(int[] heights, int location, int water) {
             int[] waters = new int[heights.length];
             int pourLocation;
 
@@ -77,8 +81,24 @@ public class WaterLand {
         @Test
         public void test1() {
             Solution sol = new WaterLand().new Solution();
-            assertEquals(1, 1);
-        }        
+            int[] waterLand = new int[]{5, 4, 2, 1, 2, 3, 2, 1, 0, 1, 2, 4};
+            sol.pourWater(waterLand, 5, 1);
+            sol.pourWater(waterLand, 5, 5);
+            sol.pourWater(waterLand, 5, 10);
+            sol.pourWater(waterLand, 5, 20);
+            sol.pourWater(waterLand, 5, 30);
+            sol.pourWater(waterLand, 5, 50);
+            sol.pourWater(waterLand, 5, 100);
+
+            waterLand = new int[]{5, 4, 2, 1, 3, 2, 2, 1, 0, 1, 4, 3};
+            sol.pourWater(waterLand, 4, 1);
+            sol.pourWater(waterLand, 4, 5);
+            sol.pourWater(waterLand, 4, 10);
+            sol.pourWater(waterLand, 4, 20);
+            sol.pourWater(waterLand, 4, 30);
+            sol.pourWater(waterLand, 4, 50);
+            sol.pourWater(waterLand, 4, 100);
+        }
     }
 }
 
