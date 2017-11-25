@@ -9,8 +9,7 @@ import static org.junit.Assert.*;
 public class StringPyramidsTransitionMatrix {
     /*
         String Pyramids Transition Matrix
-        http://massivealgorithms.blogspot.com/2017/07/string-pyramids-transition-matrix-airbnb.html
-        Difficultly: Medium
+        AirBnB Interview Question
      */
     public class Solution {
         Map<String, Set<Character>> map;
@@ -31,15 +30,15 @@ public class StringPyramidsTransitionMatrix {
         }
 
         private void getNextLevel(List<String> res, String curr, int start, StringBuilder sb) {
-            if (start == curr.length()-1) {
+            if (start == curr.length() - 1) {
                 res.add(new String(sb));
                 return;
             }
-            for (int i=start; i<curr.length()-1; i++) {
-                String key = curr.charAt(i) + SEP + curr.charAt(i+1);
+            for (int i = start; i < curr.length() - 1; i++) {
+                String key = curr.charAt(i) + SEP + curr.charAt(i + 1);
                 for (char c : map.get(key)) {
                     sb.append(c);
-                    getNextLevel(res, curr, start+1, sb);
+                    getNextLevel(res, curr, start + 1, sb);
                     sb.setLength(sb.length() - 1);
                 }
             }

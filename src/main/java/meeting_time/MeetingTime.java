@@ -11,9 +11,7 @@ public class MeetingTime {
 
     /*
         Meeting Time
-        Find time intervals, which have no meeting
-        https://www.quora.com/What-is-the-algorithmic-approach-to-find-the-free-time-intervals-of-both-people-so-they-can-arrange-a-meeting-given-the-set-of-busy-time-intervals-of-two-people-as-in-a-calendar
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution {
         class Point implements Comparable<Point> {

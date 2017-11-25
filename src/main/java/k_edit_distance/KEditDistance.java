@@ -9,6 +9,7 @@ import static org.junit.Assert.*;
 public class KEditDistance {
     /*
         K Edit Distance
+        AirBnB Interview Question
      */
     public class Solution {
         private void search(String curr, String target, int k, TrieNode root,
@@ -21,7 +22,6 @@ public class KEditDistance {
                 }
             }
 
-            // Try every possibilities
             for (int i = 0; i < 26; i++) {
                 if (root.children[i] == null) {
                     continue;
@@ -33,12 +33,10 @@ public class KEditDistance {
                     if (target.charAt(j - 1) == (char) (i + 'a')) {
                         currDist[j] = prevDist[j - 1];
                     } else {
-                        // If not equals, an edit is required, either remove, replace or insert
                         currDist[j] = Math.min(Math.min(prevDist[j - 1], prevDist[j]), currDist[j - 1]) + 1;
                     }
                 }
 
-                // Search along the tree
                 search(curr + (char) (i + 'a'), target, k, root.children[i], currDist, result);
             }
         }
@@ -66,43 +64,42 @@ public class KEditDistance {
 
             return res;
         }
-    }
 
-    class TrieNode {
-        TrieNode[] children;
-        boolean isLeaf;
+        class TrieNode {
+            TrieNode[] children;
+            boolean isLeaf;
 
-        public TrieNode() {
-            children = new TrieNode[26];
-
-        }
-    }
-
-    class Trie {
-        TrieNode root;
-
-        public Trie() {
-            root = new TrieNode();
+            public TrieNode() {
+                children = new TrieNode[26];
+            }
         }
 
-        // Add a word into trie
-        public void insert(String s) {
-            if (s == null || s.length() == 0) {
-                return;
+        class Trie {
+            TrieNode root;
+
+            public Trie() {
+                root = new TrieNode();
             }
 
-            TrieNode p = root;
-            for (int i = 0; i < s.length(); i++) {
-                char c = s.charAt(i);
-                if (p.children[c - 'a'] == null) {
-                    p.children[c - 'a'] = new TrieNode();
+            // Add a word into trie
+            public void insert(String s) {
+                if (s == null || s.length() == 0) {
+                    return;
                 }
 
-                if (i == s.length() - 1) {
-                    p.children[c - 'a'].isLeaf = true;
-                }
+                TrieNode p = root;
+                for (int i = 0; i < s.length(); i++) {
+                    char c = s.charAt(i);
+                    if (p.children[c - 'a'] == null) {
+                        p.children[c - 'a'] = new TrieNode();
+                    }
 
-                p = p.children[c - 'a'];
+                    if (i == s.length() - 1) {
+                        p.children[c - 'a'].isLeaf = true;
+                    }
+
+                    p = p.children[c - 'a'];
+                }
             }
         }
     }

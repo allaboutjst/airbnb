@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class PreferenceList {
     /*
         Preference List
-
+        AirBnB Interview Question
      */
     public class Solution {
         public List<Integer> getPreference(List<List<Integer>> preferences) {
@@ -35,8 +35,6 @@ public class PreferenceList {
                     inDegree.put(to, inDegree.getOrDefault(to, 0) + 1);
                 }
             }
-            // System.out.println(inDegree);
-            // System.out.println(nodes);
             Queue<Integer> q = new LinkedList<>();
             for (int k : inDegree.keySet()) {
                 if (inDegree.get(k) == 0) {

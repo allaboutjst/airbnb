@@ -9,8 +9,7 @@ import static org.junit.Assert.*;
 public class NumberofIntersectedRectangles {
     /*
         Number of Intersected Rectangles - Union Find
-        Similar to http://www.cnblogs.com/EdwardLiu/p/5088502.html
-        Difficulty: Hard
+        AirBnB Interview Question
      */
     public class Solution {
         private boolean intersect(int[][] r1, int[][] r2) {

@@ -10,7 +10,7 @@ public class HilbertCurve {
     /*
         Hilbert Curve
         https://en.wikipedia.org/wiki/Hilbert_curve
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution {
         public int hilbertCurve(int x, int y, int iter) {

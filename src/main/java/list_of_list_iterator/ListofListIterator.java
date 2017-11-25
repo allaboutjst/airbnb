@@ -1,5 +1,4 @@
-package list_of_list_iterator
-        ;
+    package list_of_list_iterator;
 
 import java.util.*;
 
@@ -10,7 +9,7 @@ import static org.junit.Assert.*;
 public class ListofListIterator {
     /*
         List of List Iterator
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution implements Iterator<Integer> {
         private int row, col;
@@ -70,7 +69,7 @@ public class ListofListIterator {
 
     /*
         List of List Iterator
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution_2 implements Iterator<Integer> {
         private Iterator<List<Integer>> rowIter;

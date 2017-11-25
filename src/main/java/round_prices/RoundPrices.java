@@ -9,12 +9,9 @@ import static org.junit.Assert.*;
 public class RoundPrices {
     /*
         Round Prices
-        http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=146539
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution {
-        // 思路就是先把所有floor加起来，然后看差多少，然后把多少个floor转成ceil
-        // 转的时候按照num本身与ceil的距离排序
         public int[] roundUp(double[] arr) {
             int n = arr.length;
             NumWithDiff[] arrWithDiff = new NumWithDiff[n];
@@ -23,10 +20,10 @@ public class RoundPrices {
             for (int i = 0; i < n; i++) {
                 int floor = (int) arr[i];
                 int ceil = floor;
-                if (floor < arr[i]) ceil++; // 查是不是4.0这种floor/ceil都是本身的
+                if (floor < arr[i]) ceil++;
                 floorSum += floor;
                 sum += arr[i];
-                arrWithDiff[i] = new NumWithDiff(ceil, ceil - arr[i]); // 把ceil都放在数组里面进行比较
+                arrWithDiff[i] = new NumWithDiff(ceil, ceil - arr[i]);
             }
 
             int num = (int) Math.round(sum);
@@ -64,8 +61,7 @@ public class RoundPrices {
 
     /*
         Round Prices
-        http://www.1point3acres.com/bbs/forum.php?mod=viewthread&tid=146539
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution_2 {
         public int[] roundUp(double[] prices) {

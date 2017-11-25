@@ -8,6 +8,8 @@ import static org.junit.Assert.*;
 
 public class FileSystem {
     /*
+        File System
+        AirBnB Interview Question
      */
     public class Solution {
         Map<String, Integer> pathMap;
@@ -41,7 +43,7 @@ public class FileSystem {
             pathMap.put(path, value);
 
             // Trigger callbacks
-//            String curPath = path;
+            String curPath = path;
 //            while (curPath.length() > 0) {
 //                if (callbackMap.containsKey(curPath)) {
 //                    callbackMap.get(curPath).run();
@@ -79,6 +81,20 @@ public class FileSystem {
             assertEquals(3, (int)sol.get("/a/b"));
             assertFalse(sol.create("/c/d",4));
             assertFalse(sol.set("/c/d",4));
+
+            sol = new FileSystem().new Solution();
+            assertTrue(sol.create("/NA",1));
+            assertTrue(sol.create("/EU",2));
+            assertEquals(1, (int)sol.get("/NA"));
+            assertTrue(sol.create("/NA/CA",101));
+            assertEquals(101, (int)sol.get("/NA/CA"));
+            assertTrue(sol.set("/NA/CA",102));
+            assertEquals(102, (int)sol.get("/NA/CA"));
+            assertTrue(sol.create("/NA/US",101));
+            assertEquals(101, (int)sol.get("/NA/US"));
+            assertFalse(sol.create("/NA/CA",101));
+            assertFalse(sol.create("/SA/MX",103));
+            assertFalse(sol.set("SA/MX",103));
         }
     }
 }

@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class TenWizards {
     /*
         Ten Wizards - BFS
-        Shortest distance
+        AirBnB Interview Question
      */
     public class Solution {
         public List<Integer> getShortestPath(List<List<Integer>> wizards, int source, int target) {
@@ -71,7 +71,7 @@ public class TenWizards {
 
     /*
         Ten Wizards - Dijkstra
-        Shortest distance
+        AirBnB Interview Question
      */
     public class Solution_2 {
         public List<Integer> getShortestPath(List<List<Integer>> wizards, int source, int target) {

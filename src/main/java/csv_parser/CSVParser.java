@@ -1,14 +1,16 @@
 package csv_parser;
 
 import java.util.*;
+
 import org.junit.*;
+
 import static org.junit.Assert.*;
 
 public class CSVParser {
     /*
         CSV Parser
-        https://stackoverflow.com/questions/843997/csv-parsing-in-java-working-example
-        Difficulty: Medium
+        AirBnB Interview Question
+        http://creativyst.com/Doc/Articles/CSV/CSV01.htm#EmbedBRs
      */
     public class Solution {
         public String parseCSV(String str) {
@@ -48,8 +50,8 @@ public class CSVParser {
 
     /*
         CSV Parser
-        https://stackoverflow.com/questions/843997/csv-parsing-in-java-working-example
-        Difficulty: Medium
+        AirBnB Interview Question
+        http://creativyst.com/Doc/Articles/CSV/CSV01.htm#EmbedBRs
      */
     public class Solution_2 {
         public String parseCSV(String str) {
@@ -129,7 +131,6 @@ public class CSVParser {
             expected = "\"Alexandra Alex\"";
             assertEquals(expected, sol.parseCSV(test));
         }
-
     }
 }
 

@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class MinimumCostwithAtMostKStops {
     /*
         Minimum Cost with At Most K Stops - BFS
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution {
         public int minCost(List<String> lines, String source, String target, int k) {
@@ -87,7 +87,6 @@ public class MinimumCostwithAtMostKStops {
             lines.add("B->C,100");
             lines.add("C->D,100");
             lines.add("C->A,10");
-            // sol.minCost(lines, "A", "D", 0);
             assertEquals(-1, sol.minCost(lines, "A", "D", 0));
             assertEquals(500, sol.minCost(lines, "A", "D", 1));
             assertEquals(300, sol.minCost(lines, "A", "D", 2));

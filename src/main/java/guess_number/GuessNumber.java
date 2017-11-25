@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 public class GuessNumber {
     /*
         Guess Number
-        Difficulty: Medium
+        AirBnB Interview Question
      */
     public class Solution {
         String target;
@@ -50,7 +50,7 @@ public class GuessNumber {
 
         public String guess() {
             List<Integer> res = new ArrayList<>();
-            List<Integer> cands = new ArrayList<Integer>(){{
+            List<Integer> cands = new ArrayList<Integer>() {{
                 add(1);
                 add(2);
                 add(3);
@@ -74,7 +74,7 @@ public class GuessNumber {
                 if (guessRes == guessedCount) {
                     iter.remove();
                 } else if (guessRes > guessedCount) {
-                    for (int i=guessedCount; i< guessRes; i++) {
+                    for (int i = guessedCount; i < guessRes; i++) {
                         res.add(cand);
                     }
                     iter.remove();
@@ -84,7 +84,7 @@ public class GuessNumber {
                 }
             }
             if (res.size() < 4) {
-                for (int i=res.size(); i<4; i++)
+                for (int i = res.size(); i < 4; i++)
                     res.add(6);
             }
 
