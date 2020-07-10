@@ -220,7 +220,7 @@ Find all words from a dictionary that are k edit distance away.
 
 Given 2d matrix of letters, and a word dictionary, find a path which has largest number of words (existed inside the dictionary).
 
-[Java Source Code](https://github.com/dqi2018/airbnb/blob/master/src/main/java/boggle_gane/BoggleGame.java)
+[Java Source Code](https://github.com/dqi2018/airbnb/blob/master/src/main/java/boggle_game/BoggleGame.java)
 
 #### 24 Minimum Cost with At Most K Stops
 
