@@ -2,10 +2,15 @@
 
 ## Disclaim
 
-All questions below are collected from Internet, including:
+All questions below are collected from Internet, which include but not limit to:
 
 * [GeeksForGeeks](http://www.geeksforgeeks.org/company-preparation/)
 * [GlassDoor](https://www.glassdoor.com/Interview/san-francisco-airbnb-interview-questions-SRCH_IL.0,13_IC1147401_KE14,20.htm)
+
+From what I know:
+* AirBnB is not hiring during this coronavirus pandemic time.
+* airBnB likely will change all interview questions after they start to hire on 2021.
+This repository is no longer updated.
 
 ## List of Questions
 
@@ -340,8 +345,8 @@ Design a method to guess this secret number.
 
 
 ## Requirements
-* Java >= 1.8.151
-* Gradle >= 4.2.1
+* Java >= 1.11.106
+* Gradle >= 5.6.3
 
 ## Run Unit Tests
 If you write some unit tests, you can use the following command to run them.
@@ -358,3 +363,6 @@ gradle -Dtest.single=PalindromePairs test --info
 ## Update Logs
 v1.0 11/25/2017
 * Update almost all questions with unit tests
+
+v1.1 8/26/2020
+* Update build.gradle to be compatible with Java 11 and gradle 5.6 
