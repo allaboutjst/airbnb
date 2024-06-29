@@ -5,7 +5,7 @@ import java.util.*;
 import org.junit.*;
 
 import static org.junit.Assert.*;
-
+//注意的是1 的時候是1， 然後是要處理完了以後次數才應該增加
 public class CollatzConjecture {
     /*
         Collatz Conjecture
